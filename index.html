@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Euro2KLeague — Official Site</title>
+  <meta name="description" content="Euro2KLeague — Europe's premier NBA 2K esports league. Scores, schedule, standings, teams, and leaders." />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Euro2KLeague logo" class="brand-logo" />
+        <span class="brand-name">Euro2KLeague</span>
+      </a>
+      <nav class="menu">
+        <a href="#news">News</a>
+        <a href="#standings">Standings</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#leaders">Leaders</a>
+        <a href="#teams">Teams</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Euro2KLeague</h1>
+      <p>Europe's Premier NBA&nbsp;2K Esports League</p>
+      <a class="cta" href="#schedule">View Schedule</a>
+    </div>
+    <div class="hero-overlay"></div>
+  </section>
+
+  <main class="container">
+    <section id="news" class="cards">
+      <h2>Latest</h2>
+      <div class="grid" id="news-grid">
+        <!-- populated by script.js -->
+      </div>
+    </section>
+
+    <section id="standings" class="cards">
+      <h2>Standings</h2>
+      <div class="table-wrap">
+        <table class="table" id="standings-table">
+          <thead>
+            <tr><th>Team</th><th>W</th><th>L</th><th>PCT</th><th>Streak</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="schedule" class="cards">
+      <h2>Upcoming Games</h2>
+      <div id="schedule-list" class="list"></div>
+    </section>
+
+    <section id="leaders" class="cards">
+      <h2>League Leaders</h2>
+      <div class="grid leaders" id="leaders-grid"></div>
+    </section>
+
+    <section id="teams" class="cards">
+      <h2>Teams</h2>
+      <div class="grid teams" id="teams-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Euro2KLeague. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

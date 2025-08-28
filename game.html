@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Euro2KLeague — Game Center</title>
+  <link rel="icon" href="assets/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .gc{margin:28px 0}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" class="brand-logo" alt="Euro2KLeague logo" />
+        <span class="brand-name">Euro2KLeague</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container gc">
+    <h1>Game Center</h1>
+    <p id="meta" class="muted"></p>
+
+    <div class="cards">
+      <h2>Box Score</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr><th>Player</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th></tr>
+          </thead>
+          <tbody id="box"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+  const url = new URL(location.href);
+  const id = url.searchParams.get("id") || "N/A";
+  document.getElementById("meta").textContent = "Game ID: " + id + " — sample data";
+
+  const sample = [
+    {player:"KAZ", pts:26, reb:6, ast:11, stl:2, blk:0},
+    {player:"Dino", pts:15, reb:8, ast:3, stl:1, blk:1},
+    {player:"Vico", pts:12, reb:4, ast:5, stl:0, blk:0},
+    {player:"Roma", pts:8, reb:12, ast:2, stl:1, blk:2},
+    {player:"Neo", pts:7, reb:3, ast:4, stl:2, blk:0},
+  ];
+
+  const tbody = document.getElementById("box");
+  sample.forEach(r => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = \`<td>\${r.player}</td><td>\${r.pts}</td><td>\${r.reb}</td><td>\${r.ast}</td><td>\${r.stl}</td><td>\${r.blk}</td>\`;
+    tbody.appendChild(tr);
+  });
+  </script>
+</body>
+</html>
